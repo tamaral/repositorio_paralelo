@@ -26,17 +26,18 @@ def signature_of(word)
    word.unpack("c*").sort.pack("c*")
 end
 
-# signatures = Hash.new
-# File.foreach(dictionary) do |line|
-#    word = line.chomp
-#    signature = signature_of(word)
-#    (signatures[signature] ||= []) << word
-# end
-# ARGV.each do |word|
-#    signature = signature_of(word)
-#    if signatures[signature]
-#       puts "Anagrams of #{word}: #{signatures[signature].join(', ')}"
-#    else
-#       puts "No anagrams of #{word} in #{dictionary}"
-#    end
-# end
+signatures = Hash.new { |h,k| h[k] = [] } #por defecto inicializa cada elemento vacio
+File.foreach(dictionary) do |line|
+   word = line.chomp
+   signature = signature_of(word)
+   signatures[signature] << word #signatures es una tabla hash, no un array
+end
+
+ARGV.each do |word|
+   s = signature_of(word)
+   if signatures[s].length != 0
+      puts "Anagrams of '#{word}': #{signatures[s].join(', ')}"
+  else
+    puts "No anagrams of '#{word}' found in #{dictionary}"
+  end
+end
