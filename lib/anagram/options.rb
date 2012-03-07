@@ -8,11 +8,11 @@ module Anagram
     attr_reader :dictionary
     attr_reader :words_to_find
     
-    def initialize(argv)
-      @dictionary = DEFAULT_DICTIONARY
-      parse(argv) 
-      @words_to_find = argv
-    end
+#     def initialize(argv)
+#       @dictionary = DEFAULT_DICTIONARY
+#       parse(argv) 
+#       @words_to_find = argv
+#     end
                  
   private
     
