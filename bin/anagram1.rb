@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 require 'optparse'
 dictionary = "/usr/share/dict/words"
-OptionParser.new do |opts|
+#OptionParser.new do |opts|
 
    opts.banner = "Usage: anagram [ options ] word..."
    opts.on("-d", "--dict path", String, "Path to dictionary") do |dict|
