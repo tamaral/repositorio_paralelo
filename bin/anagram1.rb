@@ -1,3 +1,4 @@
+#Esto es un nuevo comentario
 #!/usr/bin/env ruby
 require 'optparse'
 dictionary = "/usr/share/dict/words"
